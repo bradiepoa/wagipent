@@ -83,7 +83,7 @@
         <div class="col-lg-5" data-aos="fade-right">
 
          <div class="card m-3">
-        <img class="card-img-top mx-auto" src="{% static 'assets/img/logo.jpg' %}" alt="Card image" style="width:400px">
+        <img class="card-img-top mx-auto" src="{% static 'assets/img/logo.PNG' %}" alt="Card image" style="width:400px">
         </div>
 
         </div>
@@ -97,7 +97,7 @@
           <h4>OUR GOALS</h4>
           <ul>
             {% for goalz in goals|slice:":3" %}
-            <li><i class="ri-check-double-line"></i> {{ goalz.description }}</li>
+            <li><i class="ri-check-double-line"></i>{{ goalz.description }}</li>
             {% endfor %}
           </ul>
           {% for moto in mot|slice:":1" %}
