@@ -1,0 +1,80 @@
+{% extends 'mainweb/main.html' %}
+
+{% load static %}
+
+{% block content %}
+<br><br>
+<main id="main">
+    <!-- ======= Agent Single ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-lg-5 col-md-5 col-md-6">
+                <div class="agent-avatar-box">
+                  <img style="height: 500px; width: 600px;" src="{{team.imageURL}}" alt="" class="agent-avatar img-fluid">
+                </div>
+              </div>
+              <div class="col-md-7 section-md-t3">
+                <div class="agent-info-box">
+                  <div class="agent-title">
+                    <div class="title-box-d">
+                      <h1 class="title-d">{{team.tittle}}</h1>
+                      <h5 class="title-d"><i class="icofont-user"></i> {{team.Names}}</h5>
+                    </div>
+                  </div>
+                  <div class="agent-content mb-3">
+                    <p class="content-d color-text-a text-justify">
+                      {{team.description}}
+                    </p>
+                    <div class="info-agents color-a pt-4">
+                      <p>
+                        <strong>Phone: </strong>
+                        <span class="color-text-a"> {{team.Phone}}</span>
+                      </p>
+                      <p>
+                        <strong>Mobile: </strong>
+                        <span class="color-text-a"> {{team.mobile}}</span>
+                      </p>
+                      <p>
+                        <strong>Email: </strong>
+                        <span class="color-text-a"> {{team.email}}</span>
+                      </p>
+                      
+                    </div>
+                  </div>
+                  <div class="socials-footer pt-4">
+                    <ul class="list-inline">
+                      <li class="list-inline-item">
+                        <a href="{{team.twitter}}" class="link-one">
+                          <i class="icofont-twitter"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="{{team.faceBook}}" class="link-one">
+                          <i class="icofont-facebook"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="{{team.instagram}}" class="link-one">
+                          <i class="icofont-instagram"></i>
+                        </a>
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="{{team.linkedin}}" class="link-one">
+                          <i class="icofont-linkedin"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Agent Single -->
+
+  </main><!-- End #main -->
+  {% endblock content %}

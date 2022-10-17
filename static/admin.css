@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+#branding h1 {
+
+    font-family: 'b612' !important;
+    font-weight: 700 !important;
+    font-size:39px !important;
+    font-style: normal;
+
+}
+
+
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+    font-family: b612 !important;
+    color: #fff;
+}
+
+#header {
+    background: #0F05A0;
+    color: #fff;
+}
+
+#header a:link, #header a:visited {
+    color: #fff;
+}
+
+#header a:hover {
+    color: #fff;
+}
+
+div.breadcrumbs {
+    background: #f8f8f8;
+    color: #0353DC;
+}
+
+div.breadcrumbs a {
+    color: #0F05A0;
+}
+
+div.breadcrumbs a.active {
+    color: #0353DC;
+}
+
+div.breadcrumbs a:focus, div.breadcrumbs a:hover {
+    color: #0353DC;
+}
+
+.select2-container--admin-autocomplete .select2-results__option--highlighted[aria-selected] {
+    background-color: #0F05A0;
+}
+
+.paginator a:link, .paginator a:visited {
+    background: #0F05A0;
+}
+
+.button, input[type=submit], input[type=button], .submit-row input, a.button {
+    background: #0353DC;
+}
+
+.button:hover, input[type=submit]:hover, input[type=button]:hover {
+    background: #070066;
+}
+
+.module h2, .module caption, .inline-group h2 {
+    background: #0F05A0;
+}
+
+#user-tools a:focus, #user-tools a:hover {
+    border: 0;
+    color: #ddd;
+}
+
+.selector-chosen h2 {
+    background: #0F05A0;
+}
+
+.calendar td.selected a {
+    background: #0F05A0;
+}
+
+.calendar td a:focus, .timelist a:focus,
+.calendar td a:hover, .timelist a:hover {
+    background: #0F05A0;
+}
+
+#changelist-filter li.selected a {
+    color: #444;
+}
+
+fieldset.collapsed .collapse-toggle {
+    color: #444;
+}
+
+a:link, a:visited {
+    color: #545050;
+}
+a:focus, a:hover {
+    color: #0353DC;
+}
+
+table thead th.sorted .sortoptions a.sortremove:focus:after,
+table thead th.sorted .sortoptions a.sortremove:hover:after {
+    color: #444;
+}
+
+a.active.selector-chooseall:focus, a.active.selector-clearall:focus,
+a.active.selector-chooseall:hover, a.active.selector-clearall:hover {
+    color: #0353DC;
+}
+
+.calendar td a:active, .timelist a:active {
+    background: #444;
+}
+
+.change-list ul.toplinks .date-back a:focus,
+.change-list ul.toplinks .date-back a:hover {
+    color: #222;
+}
+
+.paginator a.showall:focus, .paginator a.showall:hover {
+    color: #222;
+}
+
+.paginator a:focus, .paginator a:hover {
+    background: #222;
+}
+
+#changelist-filter a:focus, #changelist-filter a:hover,
+#changelist-filter li.selected a:focus,
+#changelist-filter li.selected a:hover {
+    color: #222;
+}
+
+.calendar td a:active, .timelist a:active {
+    background: #0F05A0;
+    color: white;
+}
+
+.calendar caption, .calendarbox h2 {
+    background: #0353DC;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    background: #0F05A0;
+}
+
+.button.default:hover, input[type=submit].default:hover {
+    background: #191D22;
+}
+
+.select2-container--admin-autocomplete .select2-results__option--highlighted[aria-selected] {
+    background-color: #0F05A0;
+}
+
+.button.default, input[type=submit].default, .submit-row input.default {
+    background: #0F05A0;
+}
+
+.object-tools a:focus, .object-tools a:hover {
+    background-color: #0F05A0;
+}
+
+
+input[type=file]::-webkit-file-upload-button:hover {
+    border: 0;
+    background: #0F05A0;
+}
+
+
+body{
+
+font-family: "b612",sans-serif;
+font-weight: 400;
+font-size: 20px;
+font-style: normal;
+
+}
+
+label {
+font-size:17px !important;
+
+}
+
+
+
+a{
+font-family: "b612",sans-serif;
+font-weight: 700;
+    font-style: normal;
+
+
+    }
+
+p {
+
+font-family: font-family: "b612",sans-serif;
+font-weight: 400;
+font-style: normal;
+
+     }
+
+
+     h1 {
+
+font-family: font-family: "b612",sans-serif;
+font-weight: 400;
+font-style: normal;
+
+     }
+
+
+table, th, td {
+    font-family: font-family: "b612",sans-serif;
+    font-weight: 700;
+font-style: normal;
+    font-size:21px;
+        }
+
+
+input {
+    font-family: "b612",sans-serif !important;
+font-weight: 400;
+font-style: normal;
+font-size:18px;
+        }
+
+textarea {  
+    font-family: "b612",sans-serif !important;
+    font-weight: 400;
+    font-style: normal;
+    font-size:22px;
+         width: 90% !important; 
+    }
+
+.wmd-preview  p{
+    font-family: "b612",sans-serif !important;
+    font-size:16px !important;
+}
+
+.wmd-preview  {
+     font-family: "b612",sans-serif !important;
+     width: 100% !important; 
+     max-width: 1080px !important;
+     font-size:16px !important;
+
+  }
+
+
+
+.wmd-input {
+font-family: "b612",sans-serif !important;
+font-weight: 400;
+font-style: normal;
+font-size:21px !important;
+width: 95% !important;
+
+ }
+
+ .wmd-wrapper{
+    width: 100% !important;
+
+ }
+
+ .markdownx {
+    width: 95% !important;
+
+ }
+
+
+ .markdownx-preview {
+
+      font-family: "b612",sans-serif !important;
+      font-weight: 400;
+      font-style: normal;
+      font-size:21px !important;
+
+  }
+  p{
+    font-family: "b612",sans-serif !important;
+      font-weight: 400;
+      font-style: normal;
+      font-size:18px !important;
+
+
+  }
+
+
+
+
+@media only screen and (max-width: 1024px) {
+
+   body { 
+      font-size: 20px !important; 
+   }
+
+input {
+    font-family: "b612",sans-serif !important;
+font-weight: 400;
+font-style: normal;
+font-size:23px;
+        }
+
+textarea {  
+    font-family: "b612",sans-serif !important;
+    font-weight: 400;
+    font-style: normal;
+    font-size:23px;
+         width: 95% !important; 
+    }
+
+
+
+
+    table, th, td {
+    font-family: font-family: "b612",sans-serif;
+    font-weight: 700;
+font-style: normal;
+    font-size:21px !important;
+        }
+
+.form-row input[type=text], .form-row input[type=password], .form-row input[type=email], .form-row input[type=url], .form-row input[type=tel], .form-row input[type=number], .form-row textarea, .form-row select, .form-row .vTextField {
+
+    font-size:20px !important;
+
+
+}
+}

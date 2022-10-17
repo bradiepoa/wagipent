@@ -1,0 +1,88 @@
+{% extends 'mainweb/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+
+	<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>{{services.name}}</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Services</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry" data-aos="fade-up">
+
+              <div class="entry-img">
+                <img style="width: 800px; height: 400px;" src="{{services.imageURL}}" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="">{{services.name}}</a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="">John Doe</a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">{{services.date}}</time></a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p class="text-justify">
+                 {{services.description}}
+                </p>
+              </div>
+
+            </article><!-- End blog entry -->         
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+
+            <div class="sidebar" data-aos="fade-left">
+
+              <h3 class="sidebar-title">Other Services</h3>
+              <div class="sidebar-item recent-posts">
+                {% for others in serv|slice:":8" %}
+                <div class="post-item clearfix">
+                  <img style="width: 70px; height: 40px;" src="{{ others.imageURL }}" alt="">
+                  <h4><a href="{% url 'mainweb:service' others.id %}">{{others.name}}</a></h4>
+                  <time datetime="2020-01-01">{{ others.date }}</time>
+                </div>
+                {% endfor %}
+              </div><!-- End sidebar recent posts-->
+
+              </div><!-- End sidebar tags-->
+
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+</main>
+
+{% endblock content %}

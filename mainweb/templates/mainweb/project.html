@@ -1,0 +1,117 @@
+{% extends 'mainweb/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+
+ <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>{{ projects.name|truncatewords:5 }}</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Project</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Blog Section ======= -->
+    <section id="blog" class="blog">
+      <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-8 entries">
+
+            <article class="entry entry-single" data-aos="fade-up">
+
+              <div class="entry-img">
+                <img style="width: 800px;" src="{{ projects.imageURL }}" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="">{{ projects.name }}</a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="">John Doe</a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">{{ projects.date_created}}</time></a></li>
+                  <!-- <li class="d-flex align-items-center"><i class="icofont-comment"></i> <a href="">12 Comments</a></li> -->
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                               
+                <p class="text-justify">
+                  {{ projects.description}}
+                </p>
+                
+              </div>
+
+              <div class="entry-footer clearfix">
+                <div class="float-left">
+                  <i class="icofont-folder"></i>
+                  <ul class="cats">
+                    <li><a href="#">Business</a></li>
+                  </ul>
+
+                  <i class="icofont-tags"></i>
+                  <ul class="tags">
+                    <li><a href="#">Creative</a></li>
+                    <li><a href="#">Tips</a></li>
+                    <li><a href="#">Marketing</a></li>
+                  </ul>
+                </div>
+
+                <div class="float-right share">
+                  <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
+                  <a href="" title="Share on Facebook"><i class="icofont-facebook"></i></a>
+                  <a href="" title="Share on Instagram"><i class="icofont-instagram"></i></a>
+                </div>
+
+              </div>
+
+            </article><!-- End blog entry -->
+
+
+          </div><!-- End blog entries list -->
+
+          <div class="col-lg-4">
+
+            <div class="sidebar" data-aos="fade-left">
+
+              <h3 class="sidebar-title">Recent Projects</h3>
+              <div class="sidebar-item recent-posts">
+                {% for projects in project|slice:":10 " %}
+                <div class="post-item clearfix">
+                  <img style="height:50px ;" src="{{projects.imageURL}}" alt="">
+                  <h4><a href="{% url 'mainweb:project' projects.id %}">{{ projects.name|truncatewords:5 }}</a></h4>
+                  <time datetime="2020-01-01">{{projects.date}}</time>
+                </div>
+                {% endfor %}
+              </div><!-- End sidebar recent posts-->
+
+              </div><!-- End sidebar tags-->
+
+            </div><!-- End sidebar -->
+
+          </div><!-- End blog sidebar -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Section -->
+
+
+	
+
+</main>
+
+{% endblock content %}

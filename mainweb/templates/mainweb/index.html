@@ -1,0 +1,255 @@
+{% extends 'mainweb/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url('{% static 'assets/img/slide/slide1.JPG' %}');">
+          <div class="carousel-container">
+            <div class="carousel-content animate__animated animate__fadeInUp">
+              <h2>Welcome to <span>Company</span></h2>
+              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url('{% static 'assets/img/slide/slide-2.JPG' %}');">
+          <div class="carousel-container">
+            <div class="carousel-content animate__animated animate__fadeInUp">
+              <h2>Lorem Ipsum Dolor</h2>
+              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url('{% static 'assets/img/slide/slide-4.JPG' %}');">
+          <div class="carousel-container">
+            <div class="carousel-content animate__animated animate__fadeInUp">
+              <h2>Sequi ea ut et est quaerat</h2>
+              <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+              <div class="text-center"><a href="" class="btn-get-started">Read More</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon icofont-simple-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon icofont-simple-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+    </div>
+  </section><!-- End Hero -->
+
+
+
+<main id="main">
+
+	<!-- ======= About Us Section ======= -->
+    <section id="about-us" class="about-us">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</strong></h2>
+        </div>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-5" data-aos="fade-right">
+  
+           <div class="card m-3">
+            <img class="card-img-top mx-auto" src="{% static 'assets/img/logo.PNG' %}" alt="Card image" style="width:400px">
+          </div>
+
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+            <h3>background</h3>
+            {% for background in back|slice:":1" %}
+            <p class="text-justify">
+              {{background.description}}
+            </p>
+            {% endfor %}
+            <h4>OUR GOALS</h4>
+            <ul>
+              {% for goal in goals|slice:":3" %}
+              <li><i class="ri-check-double-line"></i> {{goal.description}}</li>
+              {% endfor %}
+            </ul>
+            {% for moto in mot|slice:":1" %}
+          <p class="font-italic text-justify">
+            {{ moto.description|upper}}
+          </p>
+          {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+<!-- trying service sliders -->
+  <section class="service services section-bg">
+    <div class="container-fluid" data-aos="fade-up">
+      <h2 class="service-category">Our services</h2>
+      <button class="pre-btn"><img src="{% static 'slider/images/arrow.png' %}" alt=""></button>
+      <button class="nxt-btn"><img src="{% static 'slider/images/arrow.png' %}" alt=""></button>
+      <div class="service-container">
+      {% for service in services %}
+        <div class="service-card">
+            <div class="service-image">
+                <img class="service-thumb" src="{{service.imageURL}}" alt="Card image" style="width:300px; height:400px;">
+                <button class="card-btn">Read More</button>
+            </div>
+            <div class="service-info">
+              <h5 class="service-name">{{service.name|truncatewords:5}}</h5>
+                <p class="card-text">{{service.description|truncatewords:10}}</p>
+            </div>
+        </div>
+      {% endfor %}  
+    </div>
+  </div>
+</section>
+<!-- end of service slides -->
+
+ <!-- sPatterner section --> 
+  <!-- sPatterner section -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+      <h3>Our Patterners</h3>
+      <div class="row">
+        {% for patterns in patt|slice:":3" %}
+        <div class="col-lg-4 entries d-flex align-items-stretch"  data-aos-delay="100">
+          <article class="entry" data-aos="fade-up">
+            <h5>
+              <a class="pattern" href="">{{patterns.name}}</a>
+            </h5><br>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">{{ patterns.Date_joined }}</time></a></li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+              <p class="text-justify">
+                {{patterns.description}}
+              </p>
+            </div>
+          </article><!-- End blog entry -->
+        </div>
+        {% endfor %}         
+
+       <!--  <a href="">More</a> -->
+
+      </div>
+    </div>
+  </section><!-- End Patterner section -->
+
+  
+    <section>
+      <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+        <div class="jumbotron jumbotron-fluid bg-info">
+          <div class="row">
+            <div class="col-lg-8">
+              {% for danation in dona|slice:":1" %}
+                <p class="m-5">{{danation.description}}</p>
+              {% endfor %}
+            </div>
+            <div class="col-lg-3 m-3">
+              <a class="btn btn-lg btn-primary"  href="">Contact us</a>
+            </div>
+          </div>
+        </div>    
+      </div>
+    </section>
+
+
+
+    <!-- events -->
+    <section id="blog" class="blog">
+      <div class="container" data-aos="fade-up">
+        <h3>Our events</h3>
+        <div class="row">
+
+          <div class="col-lg-4 entries">
+            <article class="entry" data-aos="fade-up">
+              <h5>
+                <a class="pattern" href="">Uganda Aids commission</a>
+              </h5><br>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">March 04 04</time></a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p class="text-justify">
+                  Our simple goal? Do what it takes to accelerate brands on ecommerce. That drive to help our partners win informs
+                </p>
+              </div>
+            </article><!-- End blog entry -->
+          </div>
+          <div class="col-lg-4 entries">
+            <article class="entry" data-aos="fade-up">
+              <h5>
+                <a class="pattern" href="">Uganda Aids commission</a>
+              </h5><br>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">March 04 04</time></a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p class="text-justify">
+                  Our simple goal? Do what it takes to accelerate brands on ecommerce. That drive to help our partners win informs
+                </p>
+              </div>
+            </article><!-- End blog entry -->
+          </div>
+          <div class="col-lg-4 entries">
+            <article class="entry" data-aos="fade-up">
+              <h5>
+                <a style="color: #396;" class="pattern" href="">Uganda Aids commission</a>
+              </h5><br>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">March 04 04</time></a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p class="text-justify">
+                  Our simple goal? Do what it takes to accelerate brands on ecommerce. That drive to help our partners win informs
+                </p>
+              </div>
+            </article><!-- End blog entry -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end of events -->
+</main>
+
+{% endblock content %}

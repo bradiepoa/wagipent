@@ -1,0 +1,43 @@
+{% load static %}
+
+<!-- ======= Header ======= -->
+  <header id="header" class="fixed-top bg-primary">
+    <div class="container d-flex align-items-center">
+
+      <!-- <h1 class="logo mr-auto"><a href=""><span>EMESCO </span> LOGO</a></h1> -->
+      <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="" class="logo mr-auto"><img src="{% static 'assets/img/logo.PNG' %}" alt="" class="img-fluid"></a>
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+
+          <li class="drop-down"><a href="">About</a>
+            <ul>
+              <li><a href="{% url 'mainweb:aboutpage' %}">About Us</a></li>
+              <li><a href="{% url 'mainweb:teampage' %}">Team</a></li>
+              <li class="drop-down"><a href="#">FIND MORE</a>
+                <ul>
+                  <li><a href="#">CURRENT AND PREVOUS EVENTS</a></li>
+                  <li><a href="#">CAREERS</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li><a href="{% url 'mainweb:servicespage' %}">Services</a></li>
+          <li><a href="{% url 'mainweb:projectspage' %}">PROJECTS</a></li>
+          <li><a href="{% url 'mainweb:contactus' %}">Contact</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <div class="header-social-links">
+        <a target="-blank" href="" class="facebook">login</a>
+        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="icofont-linkedin"></i></i></a>
+      </div>
+
+    </div>
+  </header><!-- End Header -->

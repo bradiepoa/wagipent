@@ -1,0 +1,107 @@
+{% extends 'mainweb/main.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center">
+        <h2>Contact</h2>
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li>Contact</li>
+        </ol>
+      </div>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Contact Section ======= -->
+  <div class="map-section">
+    <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d510663.1533768981!2d30.72031816260296!3d0.6571643348231662!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x17630d592968bf39%3A0x86d183d699aef72e!2sEMESCO%20Development%20Foundation!5e0!3m2!1sen!2sug!4v1664796551336!5m2!1sen!2sug" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <section id="contact" class="contact">
+    <div class="container">
+
+      <div class="row justify-content-center" data-aos="fade-up">
+
+        <div class="col-lg-10">
+
+          <div class="info-wrap">
+            <div class="row">
+              <div class="col-lg-4 info">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                {% for location in locate|slice:":1" %}
+                <p>{{ location.Company_name }}</p>
+                <p>{{ location.P_o_box_no }} </p>
+                {% endfor %}
+              </div>
+
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                {% for emails in emailz|slice:":2" %}
+                 <p>{{emails.email}}</p>
+                {% endfor %}
+              </div>
+
+              <div class="col-lg-4 info mt-4 mt-lg-0">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                {% for phone in phones|slice:":2" %}
+                  <p>{{phone.Phone_number}}</p>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="row mt-5 justify-content-center" data-aos="fade-up">
+        <div class="col-lg-10">
+          <form action="{% url 'mainweb:contactus' %}" method="POST" role="form" class="send_us_message">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="col-md-6 form-group">
+                {{form.name|as_crispy_field}}
+                <div class="validate"></div>
+              </div>
+              <div class="col-md-6 form-group">
+                {{form.email|as_crispy_field}}
+                <div class="validate"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              {{form.subject|as_crispy_field}}
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              {{form.massege|as_crispy_field}}
+              <div class="validate"></div>
+            </div>
+            <div class="mb-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+{% endblock content %}
