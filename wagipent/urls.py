@@ -17,7 +17,7 @@ from django.contrib import admin
 # custmising django admin
 admin.site.site_header = "WAGIP ADMIN LOGIN"
 admin.site.site_title = "WAGIN COMPANY"
-admin.site.index_title  =  "EMESCO DASHBOARD"
+admin.site.index_title  =  "WAGIP DASHBOARD"
 # customising django admin
 from django.urls import path, include
 

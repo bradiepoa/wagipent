@@ -1,7 +1,7 @@
 from django.contrib import admin
 from . models import (
     Location,Email,OfficePhone,sendUsMessage,Category,Project,serviceCategory,Service,background,goal,motor,mission,vission,
-    mainObjective,Staff,StaffCaption,Parttener,donationCaption
+    mainObjective,Staff,StaffCaption,Parttener,contactDescription,Companies
     )
 
 # Register your models here.
@@ -146,9 +146,17 @@ class ParttenerAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_created'
     ordering = ('date_created',)
 
-@admin.register(donationCaption)
-class donationCaptionAdmin(admin.ModelAdmin):
+@admin.register(contactDescription)
+class contactDescriptionAdmin(admin.ModelAdmin):
     list_display = ('description','created_by','date_created','laste_update','is_published')
+    list_filter = ('date_created',)
+    search_fields = ('date_created',)
+    date_hierarchy = 'date_created'
+    ordering = ('date_created',)
+
+@admin.register(Companies)
+class CompaniesAdmin(admin.ModelAdmin):
+    list_display = ('name','our_link','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)
     date_hierarchy = 'date_created'

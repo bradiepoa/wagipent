@@ -59,8 +59,6 @@
     </div>
   </section><!-- End Hero -->
 
-
-
 <main id="main">
 
 	<!-- ======= About Us Section ======= -->
@@ -107,15 +105,15 @@
 <!-- trying service sliders -->
   <section class="service services section-bg">
     <div class="container-fluid" data-aos="fade-up">
-      <h2 class="service-category">Our services</h2>
-      <button class="pre-btn"><img src="{% static 'slider/images/arrow.png' %}" alt=""></button>
-      <button class="nxt-btn"><img src="{% static 'slider/images/arrow.png' %}" alt=""></button>
+      <h2 class="service-category">Our Companies</h2>
+      <a class="pre-btn"><img src="{% static 'slider/images/arrow.png' %}" alt=""></a>
+      <a class="nxt-btn"><img src="{% static 'slider/images/arrow.png' %}" alt=""></a>
       <div class="service-container">
       {% for service in services %}
         <div class="service-card">
             <div class="service-image">
-                <img class="service-thumb" src="{{service.imageURL}}" alt="Card image" style="width:300px; height:400px;">
-                <button class="card-btn">Read More</button>
+                <img class="service-thumb" src="{{service.imageURL}}" alt="Card image" style="width:1000px; height:400px;">
+                <a target="_blank" href="{{service.our_link}}" class="card-btn stretched-link">Read More</a>
             </div>
             <div class="service-info">
               <h5 class="service-name">{{service.name|truncatewords:5}}</h5>

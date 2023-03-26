@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 from email.policy import default
 from enum import unique
@@ -229,7 +228,7 @@ class Parttener(models.Model):
         return self.name
 
 
-class donationCaption(models.Model):
+class contactDescription(models.Model):
     description = models.TextField(unique=True,)
     created_by = models.CharField(max_length=200, blank=True, null=True)
     is_published = models.BooleanField(default=True)
@@ -237,3 +236,28 @@ class donationCaption(models.Model):
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
     def __str__(self):
         return self.description
+
+
+class Companies(models.Model):
+    name  = models.CharField(max_length=200,unique=True, blank=True, null=True)
+    image = models.ImageField(upload_to ='company', blank=True,null=True)
+    our_link = models.URLField(max_length=200, blank=True,null=True)
+    description  = models.TextField()
+    is_published = models.BooleanField(default=True)
+    date = models.DateField(auto_now_add=False, auto_now=False)
+    date_created = models.DateField(auto_now_add=True, auto_now=False)
+    laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = 'Companies'
+
+    def __str__(self):
+        return self.name
+    
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
