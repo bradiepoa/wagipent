@@ -8,8 +8,34 @@ from random import choices
 from unicodedata import category
 from django.db import models
 from ckeditor.fields import RichTextField
+import uuid
 
 # Create your models here.
+
+# Create your models here.
+class Banners(models.Model):
+    CATE = (
+		('home','home'),
+		('about','about'),
+		('team','team'),
+        ('events','events'),
+	)
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    categories = models.CharField(max_length=200, choices=CATE)
+    image = models.ImageField(upload_to='banners/')
+    date = models.DateTimeField(auto_now_add=True,auto_now=False)
+    last_updated = models.DateTimeField(auto_now_add=False,auto_now=True)
+    
+    def __str__(self):
+        return self.categories
+    
+
+    def clean(self):
+        super().clean()
+        if self.image.width < 1920 or self.image.height < 1088:
+            raise ValidationError("Image minimum dimensions should be at least 1920x1088 pixels.")
+        elif self.image.width > 1920 or self.image.height > 1088:
+            raise ValidationError("Image  dimensions should be at most 1920x1088 pixels.")
 
 class Location(models.Model):
     Company_name = models.CharField(max_length=200,unique=True)
