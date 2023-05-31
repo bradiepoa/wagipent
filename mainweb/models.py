@@ -7,12 +7,13 @@ from pydoc import describe
 from random import choices
 from unicodedata import category
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
 class Location(models.Model):
-    Company_name = models.CharField(max_length=200,unique=True, blank=True, null=True)
-    P_o_box_no = models.CharField(max_length=200,unique=True, blank=True, null=True)
+    Company_name = models.CharField(max_length=200,unique=True)
+    P_o_box_no = models.CharField(max_length=200,unique=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
 
@@ -21,16 +22,16 @@ class Location(models.Model):
 
 
 class Email(models.Model):
-    email= models.EmailField(unique=True, blank=True, null=True)
-    describe_email = models.CharField(max_length=200,blank=True, null=True)
+    email= models.EmailField(unique=True)
+    describe_email = models.CharField(max_length=200)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
     def __str__(self):
         return self.email
 
 class OfficePhone(models.Model):
-    Phone_number= models.CharField(max_length=13, unique=True, blank=True, null=True)
-    describe_Phone_number = models.CharField(max_length=200,blank=True, null=True)
+    Phone_number= models.CharField(max_length=13, unique=True)
+    describe_Phone_number = models.CharField(max_length=200)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
     def __str__(self):
@@ -38,7 +39,7 @@ class OfficePhone(models.Model):
 
 
 class sendUsMessage(models.Model):
-    name = models.CharField(max_length=200, unique=True)
+    name = models.CharField(max_length=200)
     email= models.EmailField()
     subject = models.CharField(max_length=200)
     massege = models.TextField(max_length=200)
@@ -47,7 +48,7 @@ class sendUsMessage(models.Model):
         return self.name
 
 class Category(models.Model):
-    name = models.CharField(max_length=200,unique=True, blank=True, null=True)
+    name = models.CharField(max_length=200,unique=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
     def __str__(self):
@@ -59,12 +60,12 @@ class Project(models.Model):
         ('finished','finished'),
         ('progress','progress'),
     )
-    name = models.CharField(max_length=200,unique=True, blank=True, null=True)
+    name = models.CharField(max_length=200)
     category = models.ForeignKey(Category, on_delete=models.CASCADE,)
-    image = models.ImageField(upload_to ='projects', blank=True,null=True)
-    description = models.TextField()
-    created_by = models.CharField(max_length=200, blank=True, null=True)
-    status = models.CharField(max_length=200,choices=STATUS_CHOICES, blank=True, null=True)
+    image = models.ImageField(upload_to ='projects')
+    description = RichTextField()
+    created_by = models.CharField(max_length=200)
+    status = models.CharField(max_length=200,choices=STATUS_CHOICES)
     is_published = models.BooleanField(default=True)
     date = models.DateField(auto_now_add=False, auto_now=False)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
@@ -83,7 +84,7 @@ class Project(models.Model):
 
 
 class serviceCategory(models.Model):
-    name = models.CharField(max_length=200,unique=True, blank=True, null=True)
+    name = models.CharField(max_length=200)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
     def __str__(self):
@@ -91,11 +92,11 @@ class serviceCategory(models.Model):
 
 
 class Service(models.Model):
-    name = models.CharField(max_length=200,unique=True, blank=True, null=True)
+    name = models.CharField(max_length=200,unique=True)
     category = models.ForeignKey(serviceCategory, on_delete=models.CASCADE,)
-    image = models.ImageField(upload_to ='services', blank=True,null=True)
-    description = models.TextField()
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    image = models.ImageField(upload_to ='services')
+    description = RichTextField()
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date = models.DateField(auto_now_add=False, auto_now=False)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
@@ -113,8 +114,8 @@ class Service(models.Model):
         return url
 
 class background(models.Model):
-    description = models.TextField(unique=True,)
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    description = RichTextField()
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -123,8 +124,8 @@ class background(models.Model):
     
 
 class goal(models.Model):
-    description = models.TextField(unique=True,)
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    description = RichTextField()
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -134,8 +135,8 @@ class goal(models.Model):
 
 
 class motor(models.Model):
-    description = models.TextField(unique=True,)
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    description = RichTextField()
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -144,8 +145,8 @@ class motor(models.Model):
 
 
 class mission(models.Model):
-    description = models.TextField(unique=True,)
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    description = RichTextField(unique=True,)
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -153,8 +154,8 @@ class mission(models.Model):
         return self.description
 
 class vission(models.Model):
-    description = models.TextField(unique=True,)
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    description = RichTextField()
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -163,8 +164,8 @@ class vission(models.Model):
 
 
 class mainObjective(models.Model):
-    description = models.TextField(unique=True,)
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    description = RichTextField()
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -173,7 +174,7 @@ class mainObjective(models.Model):
 
 
 class StaffCaption(models.Model):
-    description = models.TextField(unique=True,)
+    description = RichTextField()
     created_by = models.CharField(max_length=200, blank=True, null=True)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
@@ -184,19 +185,19 @@ class StaffCaption(models.Model):
 
 
 class Staff(models.Model):
-    Names = models.CharField(max_length=200, blank=True, null=True)
-    tittle = models.CharField(max_length=200, blank=True, null=True)
-    Phone = models.CharField(max_length=200, blank=True, null=True)
-    mobile = models.CharField(max_length=200, blank=True, null=True)
+    Names = models.CharField(max_length=200)
+    tittle = models.CharField(max_length=200)
+    Phone = models.CharField(max_length=200)
+    mobile = models.CharField(max_length=200)
     email = models.EmailField(max_length=200,blank=True, null=True)
     twitter = models.CharField(max_length=200,blank=True, null=True)
     faceBook = models.CharField(max_length=200,blank=True, null=True)
     instagram = models.CharField(max_length=200,blank=True, null=True)
     linkedin = models.CharField(max_length=200,blank=True, null=True)
-    description = models.TextField(unique=True,)
-    image = models.ImageField(upload_to ='team', blank=True,null=True)
+    description = RichTextField()
+    image = models.ImageField(upload_to ='team')
     Date_joined = models.DateField(auto_now_add=False, auto_now=False)
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -217,7 +218,7 @@ class Parttener(models.Model):
     name = models.CharField(max_length=200,unique=True, blank=True, null=True)
     email = models.EmailField(max_length=200, blank=True, null=True)
     phone = models.CharField(max_length=200, blank=True, null=True)
-    description = models.TextField(unique=True,)
+    description = RichTextField()
     Date_joined = models.DateField(auto_now_add=False, auto_now=False)
     created_by = models.CharField(max_length=200, blank=True, null=True)
     is_published = models.BooleanField(default=True)
@@ -242,7 +243,7 @@ class Companies(models.Model):
     name  = models.CharField(max_length=200,unique=True, blank=True, null=True)
     image = models.ImageField(upload_to ='company', blank=True,null=True)
     our_link = models.URLField(max_length=200, blank=True,null=True)
-    description  = models.TextField()
+    description  = RichTextField()
     is_published = models.BooleanField(default=True)
     date = models.DateField(auto_now_add=False, auto_now=False)
     date_created = models.DateField(auto_now_add=True, auto_now=False)

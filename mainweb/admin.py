@@ -1,8 +1,5 @@
 from django.contrib import admin
-from . models import (
-    Location,Email,OfficePhone,sendUsMessage,Category,Project,serviceCategory,Service,background,goal,motor,mission,vission,
-    mainObjective,Staff,StaffCaption,Parttener,contactDescription,Companies
-    )
+from . models import *
 
 # Register your models here.
 
@@ -75,7 +72,7 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(background)
 class backgroundAdmin(admin.ModelAdmin):
-    list_display = ('description','created_by','date_created','laste_update','is_published')
+    list_display = ('created_by','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)
     date_hierarchy = 'date_created'
@@ -83,7 +80,7 @@ class backgroundAdmin(admin.ModelAdmin):
 
 @admin.register(goal)
 class goalAdmin(admin.ModelAdmin):
-    list_display = ('description','created_by','date_created','laste_update','is_published')
+    list_display = ('created_by','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)
     date_hierarchy = 'date_created'
@@ -91,7 +88,7 @@ class goalAdmin(admin.ModelAdmin):
 
 @admin.register(mission)
 class missionAdmin(admin.ModelAdmin):
-    list_display = ('description','created_by','date_created','laste_update','is_published')
+    list_display = ('created_by','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)
     date_hierarchy = 'date_created'
@@ -99,7 +96,7 @@ class missionAdmin(admin.ModelAdmin):
 
 @admin.register(motor)
 class motorAdmin(admin.ModelAdmin):
-    list_display = ('description','created_by','date_created','laste_update','is_published')
+    list_display = ('created_by','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)
     date_hierarchy = 'date_created'
@@ -107,7 +104,7 @@ class motorAdmin(admin.ModelAdmin):
 
 @admin.register(vission)
 class vissionAdmin(admin.ModelAdmin):
-    list_display = ('description','created_by','date_created','laste_update','is_published')
+    list_display = ('created_by','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)
     date_hierarchy = 'date_created'
@@ -115,7 +112,7 @@ class vissionAdmin(admin.ModelAdmin):
 
 @admin.register(mainObjective)
 class mainObjectiveAdmin(admin.ModelAdmin):
-    list_display = ('description','created_by','date_created','laste_update','is_published')
+    list_display = ('created_by','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)
     date_hierarchy = 'date_created'
@@ -132,7 +129,7 @@ class StaffAdmin(admin.ModelAdmin):
 
 @admin.register(StaffCaption)
 class StaffCaptionAdmin(admin.ModelAdmin):
-    list_display = ('description','created_by','date_created','laste_update','is_published')
+    list_display = ('created_by','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)
     date_hierarchy = 'date_created'
@@ -148,7 +145,7 @@ class ParttenerAdmin(admin.ModelAdmin):
 
 @admin.register(contactDescription)
 class contactDescriptionAdmin(admin.ModelAdmin):
-    list_display = ('description','created_by','date_created','laste_update','is_published')
+    list_display = ('created_by','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)
     date_hierarchy = 'date_created'

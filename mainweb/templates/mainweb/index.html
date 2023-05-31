@@ -117,7 +117,7 @@
             </div>
             <div class="service-info">
               <h5 class="service-name">{{service.name|truncatewords:5}}</h5>
-                <p class="card-text">{{service.description|truncatewords:10}}</p>
+                <p class="card-text">{{service.description|truncatewords:10|safe}}</p>
             </div>
         </div>
       {% endfor %}  
