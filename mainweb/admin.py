@@ -94,8 +94,8 @@ class missionAdmin(admin.ModelAdmin):
     date_hierarchy = 'date_created'
     ordering = ('date_created',)
 
-@admin.register(motor)
-class motorAdmin(admin.ModelAdmin):
+@admin.register(motto)
+class mottoAdmin(admin.ModelAdmin):
     list_display = ('created_by','date_created','laste_update','is_published')
     list_filter = ('date_created',)
     search_fields = ('date_created',)

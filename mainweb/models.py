@@ -107,6 +107,13 @@ class Project(models.Model):
         except:
             url = ''
         return url
+    
+    def clean(self):
+        super().clean()
+        if self.image.width < 1920 or self.image.height < 1088:
+            raise ValidationError("Image minimum dimensions should be at least 1920x1088 pixels.")
+        elif self.image.width > 1920 or self.image.height > 1088:
+            raise ValidationError("Image  dimensions should be at most 1920x1088 pixels.")
 
 
 class serviceCategory(models.Model):
@@ -138,6 +145,13 @@ class Service(models.Model):
         except:
             url = ''
         return url
+    
+    def clean(self):
+        super().clean()
+        if self.image.width < 1920 or self.image.height < 1088:
+            raise ValidationError("Image minimum dimensions should be at least 1920x1088 pixels.")
+        elif self.image.width > 1920 or self.image.height > 1088:
+            raise ValidationError("Image  dimensions should be at most 1920x1088 pixels.")
 
 class background(models.Model):
     description = RichTextField()
@@ -160,7 +174,7 @@ class goal(models.Model):
     
 
 
-class motor(models.Model):
+class motto(models.Model):
     description = RichTextField()
     created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
@@ -238,6 +252,13 @@ class Staff(models.Model):
         except:
             url = ''
         return url
+    
+    def clean(self):
+        super().clean()
+        if self.image.width < 600 or self.image.height < 600:
+            raise ValidationError("Image minimum dimensions should be at least 1920x1088 pixels.")
+        elif self.image.width > 600 or self.image.height > 600:
+            raise ValidationError("Image  dimensions should be at most 1920x1088 pixels.")
 
 
 class Parttener(models.Model):
@@ -288,3 +309,11 @@ class Companies(models.Model):
         except:
             url = ''
         return url
+    
+
+    def clean(self):
+        super().clean()
+        if self.image.width < 600 or self.image.height < 600:
+            raise ValidationError("Image minimum dimensions should be at least 1920x1088 pixels.")
+        elif self.image.width > 600 or self.image.height > 600:
+            raise ValidationError("Image  dimensions should be at most 1920x1088 pixels.")

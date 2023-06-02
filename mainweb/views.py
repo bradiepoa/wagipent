@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from . forms import ContactForm
-from . models import (sendUsMessage,Location,Email,OfficePhone,Project,Category,Service,background,goal,motor,mission,vission,
+from . models import (sendUsMessage,Location,Email,OfficePhone,Project,Category,Service,background,goal,motto,mission,vission,
 mainObjective,StaffCaption,Staff,Parttener,contactDescription,Companies
 )
 
