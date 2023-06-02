@@ -7,13 +7,19 @@
 
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Company</h3>
-            <p>
-              Kikada road Karuguza Town, <br>
-              Kibaale town council<br>
-              Western Uganda <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
-            </p>
+          {% for location in locate|slice:":1" %}
+            <p>{{ location.Company_name }}</p>
+            <p>{{ location.P_o_box_no }} </p>
+          {% endfor %}
+          <br>
+
+          {% for emails in emailz|slice:":1" %}
+            <p>Email: {{emails.email}}</p>
+          {% endfor %}
+
+          {% for phone in phones|slice:":1" %}
+           <p>Tel: {{phone.Phone_number}}</p>
+          {% endfor %}
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
