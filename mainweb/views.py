@@ -31,8 +31,8 @@ def Home_view(request):
 
 	context = {'services':services}
 	context = {
-		'back':back, 'goals':goals,'mot':mot, 'misso':misso
-		, 'visso':visso,'mbj':mbj,'services':services,"dona":dona,"patt":patt,'querryset':querryset
+		'back':back, 'goals':goals,'mot':mot, 'misso':misso,'locate':locate,'emailz':emailz,'phones':phones,
+		'visso':visso,'mbj':mbj,'services':services,"dona":dona,"patt":patt,'querryset':querryset
 		}
 	return render(request, 'mainweb/index.html',context)
 
@@ -60,7 +60,8 @@ def About_view(request):
 
 	context = {
 		'back':back, 'goals':goals,'mot':mot, 'capt':capt,'misso':misso
-		, 'visso':visso,'mbj':mbj,'capt':capt,'team':team,'patt':patt,'querryset':querryset
+		, 'visso':visso,'mbj':mbj,'capt':capt,'team':team,'patt':patt,'querryset':querryset,
+		'locate':locate,'emailz':emailz,'phones':phones,
 		}
 	return render(request, 'mainweb/about.html',context)
 
@@ -72,7 +73,7 @@ def Services_view(request):
 	emailz = Email.objects.all().order_by('-date_created')
 	phones = OfficePhone.objects.all().order_by('-date_created')
 
-	context = {'querryset':querryset,"projects":projects,'querryset':querryset}
+	context = {'querryset':querryset,"projects":projects,'querryset':querryset,'locate':locate,'emailz':emailz,'phones':phones}
 	return render(request, 'mainweb/services.html',context)
 
 def serviceDetail(request,pk):
@@ -85,7 +86,7 @@ def serviceDetail(request,pk):
 	emailz = Email.objects.all().order_by('-date_created')
 	phones = OfficePhone.objects.all().order_by('-date_created')
 
-	context = {'services':services, 'serv':serv,'querryset':querryset}
+	context = {'services':services, 'serv':serv,'querryset':querryset,'locate':locate,'emailz':emailz,'phones':phones}
 	return render(request, 'mainweb/service.html',context)
 
 def Projects_view(request):
@@ -115,7 +116,10 @@ def Projects_view(request):
 	emailz = Email.objects.all().order_by('-date_created')
 	phones = OfficePhone.objects.all().order_by('-date_created')
 
-	context = {'projects':projects, 'categories':categories, 'page':page,"proj":proj,'querryset':querryset}
+	context = {
+		'projects':projects, 'categories':categories,
+	 'page':page,"proj":proj,'querryset':querryset,'locate':locate,'emailz':emailz,'phones':phones
+	 }
 	return render(request, 'mainweb/projects.html', context)
 
 def Projectview(request,pk):
@@ -127,7 +131,10 @@ def Projectview(request,pk):
 	emailz = Email.objects.all().order_by('-date_created')
 	phones = OfficePhone.objects.all().order_by('-date_created')
 
-	context = {'projects':projects, 'project':project,'querryset':querryset}
+	context = {
+		'projects':projects, 'project':project,
+	'querryset':querryset,'locate':locate,'emailz':emailz,'phones':phones,
+	}
 	return render(request, 'mainweb/project.html', context)
 
 
@@ -139,7 +146,7 @@ def Team_view(request):
 	emailz = Email.objects.all().order_by('-date_created')
 	phones = OfficePhone.objects.all().order_by('-date_created')
 
-	context = {'team':team,'querryset':querryset}
+	context = {'team':team,'querryset':querryset,'locate':locate,'emailz':emailz,'phones':phones}
 	return render(request, 'mainweb/team.html', context)
 
 def singleTeam(request, pk):	
@@ -150,7 +157,7 @@ def singleTeam(request, pk):
 	phones = OfficePhone.objects.all().order_by('-date_created')
 
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
-	context = {'team':team,'querryset':querryset}
+	context = {'team':team,'querryset':querryset,'locate':locate,'emailz':emailz,'phones':phones}
 	return render(request ,'mainweb/single_team.html',context)
 
 
