@@ -22,6 +22,7 @@ class Banners(models.Model):
 	)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     categories = models.CharField(max_length=200, choices=CATE)
+    Note = RichTextField()
     image = models.ImageField(upload_to='banners/')
     date = models.DateTimeField(auto_now_add=True,auto_now=False)
     last_updated = models.DateTimeField(auto_now_add=False,auto_now=True)
