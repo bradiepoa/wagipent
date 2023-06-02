@@ -11,7 +11,7 @@ from django.contrib import messages
 
 def Home_view(request):
 
-	banner = Banners.objects.filter(categories='home').order_by("-date")
+	banner = Banners.objects.filter(categories='home').order_by("date")
 	services = Companies.objects.order_by('-date_created').filter(is_published=True)
 	back = background.objects.order_by('-date_created').filter(is_published=True)
 	goals = goal.objects.order_by('-date_created').filter(is_published=True)
