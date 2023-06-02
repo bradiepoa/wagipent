@@ -25,6 +25,9 @@ class Banners(models.Model):
     image = models.ImageField(upload_to='banners/')
     date = models.DateTimeField(auto_now_add=True,auto_now=False)
     last_updated = models.DateTimeField(auto_now_add=False,auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '20. Banners'
     
     def __str__(self):
         return self.categories
@@ -43,6 +46,9 @@ class Location(models.Model):
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
 
+    class Meta:
+        verbose_name_plural = '03. Location'
+
     def __str__(self):
         return self.Company_name
 
@@ -52,6 +58,11 @@ class Email(models.Model):
     describe_email = models.CharField(max_length=200)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '02. Emails'
+
+
     def __str__(self):
         return self.email
 
@@ -60,6 +71,10 @@ class OfficePhone(models.Model):
     describe_Phone_number = models.CharField(max_length=200)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '01. Office Phone'
+
     def __str__(self):
         return self.Phone_number
 
@@ -70,6 +85,10 @@ class sendUsMessage(models.Model):
     subject = models.CharField(max_length=200)
     massege = models.TextField(max_length=200)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
+
+    class Meta:
+        verbose_name_plural = '19. sent Messages'
+
     def __str__(self):
         return self.name
 
@@ -77,6 +96,10 @@ class Category(models.Model):
     name = models.CharField(max_length=200,unique=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '18. Categories'
+        
     def __str__(self):
         return self.name
 
@@ -96,6 +119,9 @@ class Project(models.Model):
     date = models.DateField(auto_now_add=False, auto_now=False)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '17. Project'
 
     def __str__(self):
         return self.name
@@ -120,6 +146,10 @@ class serviceCategory(models.Model):
     name = models.CharField(max_length=200)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '16. service Categories'
+
     def __str__(self):
         return self.name
 
@@ -134,6 +164,9 @@ class Service(models.Model):
     date = models.DateField(auto_now_add=False, auto_now=False)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '15. Services'
 
     def __str__(self):
         return self.name
@@ -159,6 +192,10 @@ class background(models.Model):
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '14. Background'
+
     def __str__(self):
         return self.description
     
@@ -169,6 +206,10 @@ class goal(models.Model):
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '13. Goal'
+
     def __str__(self):
         return self.description
     
@@ -180,6 +221,10 @@ class motto(models.Model):
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '12. Motto'
+
     def __str__(self):
         return self.description
 
@@ -190,6 +235,10 @@ class mission(models.Model):
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '11. mission'
+
     def __str__(self):
         return self.description
 
@@ -199,6 +248,10 @@ class vission(models.Model):
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '10. vission'
+
     def __str__(self):
         return self.description
 
@@ -209,6 +262,10 @@ class mainObjective(models.Model):
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '09. main objectives'
+
     def __str__(self):
         return self.description
 
@@ -219,6 +276,10 @@ class StaffCaption(models.Model):
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '08. staff Caption'
+
     def __str__(self):
         return self.description
 
@@ -241,6 +302,9 @@ class Staff(models.Model):
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '07. staff'
 
     def __str__(self):
         return self.Names
@@ -272,6 +336,9 @@ class Parttener(models.Model):
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
 
+    class Meta:
+        verbose_name_plural = '06. Patterners'
+
     def __str__(self):
         return self.name
 
@@ -282,6 +349,10 @@ class contactDescription(models.Model):
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
+
+    class Meta:
+        verbose_name_plural = '05. Contact Description'
+
     def __str__(self):
         return self.description
 
@@ -297,7 +368,7 @@ class Companies(models.Model):
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
 
     class Meta:
-        verbose_name_plural = 'Companies'
+        verbose_name_plural = '04. Companies'
 
     def __str__(self):
         return self.name
@@ -317,3 +388,8 @@ class Companies(models.Model):
             raise ValidationError("Image minimum dimensions should be at least 1920x1088 pixels.")
         elif self.image.width > 600 or self.image.height > 600:
             raise ValidationError("Image  dimensions should be at most 1920x1088 pixels.")
+
+
+
+
+
