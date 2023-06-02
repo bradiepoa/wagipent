@@ -62,45 +62,7 @@
 <main id="main">
 
 	<!-- ======= About Us Section ======= -->
-    <section id="about-us" class="about-us">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About Us</strong></h2>
-        </div>
-        </div>
-
-        <div class="row content">
-          <div class="col-lg-5" data-aos="fade-right">
-  
-           <div class="card m-3">
-            <img class="card-img-top mx-auto" src="{% static 'assets/img/logo.PNG' %}" alt="Card image" style="width:400px">
-          </div>
-
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
-            <h3>background</h3>
-            {% for background in back|slice:":1" %}
-            <p class="text-justify">
-              {{background.description}}
-            </p>
-            {% endfor %}
-            <h4>OUR GOALS</h4>
-            <ul>
-              {% for goal in goals|slice:":3" %}
-              <li><i class="ri-check-double-line"></i> {{goal.description}}</li>
-              {% endfor %}
-            </ul>
-            {% for moto in mot|slice:":1" %}
-          <p class="font-italic text-justify">
-            {{ moto.description|upper}}
-          </p>
-          {% endfor %}
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Us Section -->
+    {% include 'mainweb/background.html ' %}
 
 <!-- trying service sliders -->
   <section class="service services section-bg bg-info">
