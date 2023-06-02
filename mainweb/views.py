@@ -15,7 +15,7 @@ def Home_view(request):
 	services = Companies.objects.order_by('-date_created').filter(is_published=True)
 	back = background.objects.order_by('-date_created').filter(is_published=True)
 	goals = goal.objects.order_by('-date_created').filter(is_published=True)
-	mot = motor.objects.order_by('-date_created').filter(is_published=True)
+	mot = motto.objects.order_by('-date_created').filter(is_published=True)
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
 
 	misso = mission.objects.order_by('-date_created').filter(is_published=True)
@@ -40,7 +40,7 @@ def Home_view(request):
 def About_view(request):
 	back = background.objects.order_by('-date_created').filter(is_published=True)
 	goals = goal.objects.order_by('-date_created').filter(is_published=True)
-	mot = motor.objects.order_by('-date_created').filter(is_published=True)
+	mot = motto.objects.order_by('-date_created').filter(is_published=True)
 
 	misso = mission.objects.order_by('-date_created').filter(is_published=True)
 	visso = vission.objects.order_by('-date_created').filter(is_published=True)
