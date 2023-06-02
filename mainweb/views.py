@@ -3,15 +3,15 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from . forms import ContactForm
-from . models import (sendUsMessage,Location,Email,OfficePhone,Project,Category,Service,background,goal,motto,mission,vission,
-mainObjective,StaffCaption,Staff,Parttener,contactDescription,Companies
-)
+from . models import *
 
 from django.contrib import messages
 
 # Create your views here.
 
 def Home_view(request):
+
+	banner = Banners.objects.filter(categories='home').order_by("-date")
 	services = Companies.objects.order_by('-date_created').filter(is_published=True)
 	back = background.objects.order_by('-date_created').filter(is_published=True)
 	goals = goal.objects.order_by('-date_created').filter(is_published=True)
