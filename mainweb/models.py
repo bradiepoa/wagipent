@@ -198,7 +198,7 @@ class background(models.Model):
         verbose_name_plural = '14. Background'
 
     def __str__(self):
-        return self.description
+        return self.created_by
     
 
 class goal(models.Model):

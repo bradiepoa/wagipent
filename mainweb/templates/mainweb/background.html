@@ -14,7 +14,7 @@
           <h3>Background</h3>
           {% for background in back|slice:":1" %}
           <p class="text-justify">
-            {{background.description}}
+            {{background.description|safe}}
           </p>
           {% endfor %}
           <h4>OUR GOALS</h4>
