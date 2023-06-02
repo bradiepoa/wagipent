@@ -23,6 +23,10 @@ def Home_view(request):
 	mbj = mainObjective.objects.order_by('-date_created').filter(is_published=True)
 	dona = contactDescription.objects.order_by('-date_created').filter(is_published=True)
 
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
+
 	patt = Parttener.objects.order_by('-date_created').filter(is_published=True)
 
 	context = {'services':services}
@@ -42,6 +46,10 @@ def About_view(request):
 	visso = vission.objects.order_by('-date_created').filter(is_published=True)
 	mbj = mainObjective.objects.order_by('-date_created').filter(is_published=True)
 
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
+
 	capt = StaffCaption.objects.order_by('-date_created').filter(is_published=True)
 
 	team = Staff.objects.order_by('-date_created').filter(is_published=True)
@@ -60,6 +68,10 @@ def Services_view(request):
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
 	projects = Project.objects.order_by('-date').filter(status='finished')
 
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
+
 	context = {'querryset':querryset,"projects":projects,'querryset':querryset}
 	return render(request, 'mainweb/services.html',context)
 
@@ -68,6 +80,10 @@ def serviceDetail(request,pk):
 	services = Service.objects.get(id=pk)
 	serv = Service.objects.order_by('-date').filter(is_published=True)
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
+
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
 
 	context = {'services':services, 'serv':serv,'querryset':querryset}
 	return render(request, 'mainweb/service.html',context)
@@ -95,6 +111,10 @@ def Projects_view(request):
 	categories = Category.objects.all()
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
 
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
+
 	context = {'projects':projects, 'categories':categories, 'page':page,"proj":proj,'querryset':querryset}
 	return render(request, 'mainweb/projects.html', context)
 
@@ -102,6 +122,10 @@ def Projectview(request,pk):
 	projects = Project.objects.get(id=pk)
 	project = Project.objects.order_by('-date').filter(is_published=True)
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
+
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
 
 	context = {'projects':projects, 'project':project,'querryset':querryset}
 	return render(request, 'mainweb/project.html', context)
@@ -111,11 +135,20 @@ def Team_view(request):
 	team = Staff.objects.order_by('-date_created').filter(is_published=True)
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
 
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
+
 	context = {'team':team,'querryset':querryset}
 	return render(request, 'mainweb/team.html', context)
 
 def singleTeam(request, pk):	
 	team = Staff.objects.get(id=pk)
+	
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
+
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
 	context = {'team':team,'querryset':querryset}
 	return render(request ,'mainweb/single_team.html',context)
