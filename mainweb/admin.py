@@ -3,6 +3,14 @@ from . models import *
 
 # Register your models here.
 
+@admin.register(Banners)
+class BannersAdmin(admin.ModelAdmin):
+    list_display = ('categories','date','last_updated')
+    list_filter = ('date',)
+    search_fields = ('categories',)
+    date_hierarchy = 'date'
+    ordering = ('date',)
+
 @admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     list_display = ('Company_name','P_o_box_no','date_created','laste_update')

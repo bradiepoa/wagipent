@@ -9,6 +9,7 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
+      {% for banners in banner %}
         <div class="carousel-item active" style="background-image: url('{% static 'assets/img/slide/slide1.jpg' %}');">
           <div class="carousel-container">
             <div class="carousel-content animate__animated animate__fadeInUp">
@@ -18,6 +19,7 @@
             </div>
           </div>
         </div>
+      {% endfor %}
 
 
       </div>

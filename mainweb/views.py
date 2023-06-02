@@ -32,7 +32,7 @@ def Home_view(request):
 	context = {'services':services}
 	context = {
 		'back':back, 'goals':goals,'mot':mot, 'misso':misso,'locate':locate,'emailz':emailz,'phones':phones,
-		'visso':visso,'mbj':mbj,'services':services,"dona":dona,"patt":patt,'querryset':querryset
+		'visso':visso,'mbj':mbj,'services':services,"dona":dona,"patt":patt,'querryset':querryset,'banner':banner
 		}
 	return render(request, 'mainweb/index.html',context)
 
