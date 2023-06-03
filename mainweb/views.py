@@ -175,3 +175,15 @@ def Contacts_view(request):
 			return redirect('mainweb:contactus')
 	context = {'form':form,'locate':locate,'emailz':emailz,'phones':phones,'querryset':querryset}
 	return render(request, 'mainweb/contacts.html', context)
+
+
+
+
+def eventView(request):
+	querryset = Service.objects.order_by('-date').filter(is_published=True)
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
+	
+	context = {'locate':locate,'emailz':emailz,'phones':phones,'querryset':querryset}
+	return render(request, 'mainweb/events.html', context)

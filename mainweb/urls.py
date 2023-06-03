@@ -13,4 +13,5 @@ path('service/<str:pk>/', views.serviceDetail, name='service'),
 path('team', views.Team_view, name='teampage'),
 path('team12/<str:pk>/', views.singleTeam, name='team12'),
 path('contacts', views.Contacts_view, name='contactus'),
+path('events', views.eventView, name='events'),
 ]

@@ -105,9 +105,9 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="jumbotron jumbotron-fluid bg-info">
           <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-8 m-5">
               {% for danation in dona|slice:":1" %}
-                <p class="m-5">{{danation.description}}</p>
+                <p class="m-5">{{danation.description|safe}}</p>
               {% endfor %}
             </div>
             <div class="col-lg-3 m-3">

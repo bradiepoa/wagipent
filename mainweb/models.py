@@ -345,17 +345,17 @@ class Parttener(models.Model):
 
 
 class contactDescription(models.Model):
-    description = models.TextField(unique=True,)
+    description = RichTextField()
     created_by = models.CharField(max_length=200, blank=True, null=True)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
 
     class Meta:
-        verbose_name_plural = '05. Contact Description'
+        verbose_name_plural = '05. why work with us'
 
     def __str__(self):
-        return self.description
+        return self.created_by
 
 
 class Companies(models.Model):
