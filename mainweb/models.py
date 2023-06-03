@@ -391,6 +391,27 @@ class Companies(models.Model):
             raise ValidationError("Image  dimensions should be at most 1920x1088 pixels.")
 
 
+class CurrentAndPreviousEvents(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    name        = models.CharField(max_length=200)
+    description = RichTextField()
+    image       = models.ImageField(upload_to ='events')
+    date        =  models.DateField(auto_now_add=True, auto_now=False)
+    is_published = models.BooleanField(default=True)
+    last_update  =  models.DateField(auto_now_add=False, auto_now=True)
+    event_date   =  models.DateField(auto_now_add=False, auto_now=False)
 
+    class Meta:
+        verbose_name_plural = '21. Current And Previous Events'
 
+    def __str__(self):
+        return self.name
 
+    
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url

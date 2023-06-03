@@ -1,7 +1,14 @@
 from django.contrib import admin
 from . models import *
 
-# Register your models here.
+# Register your models here. 
+@admin.register(CurrentAndPreviousEvents)
+class CurrentAndPreviousEventsAdmin(admin.ModelAdmin):
+    list_display = ('name','date','is_published')
+    list_filter = ('date',)
+    search_fields = ('name',)
+    date_hierarchy = 'date'
+    ordering = ('date',)
 
 @admin.register(Banners)
 class BannersAdmin(admin.ModelAdmin):

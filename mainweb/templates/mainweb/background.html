@@ -17,12 +17,7 @@
             {{background.description|safe}}
           </p>
           {% endfor %}
-          <h4>OUR GOALS</h4>
-          <ul>
-            {% for goal in goals|slice:":3" %}
-            <li><i class="ri-check-double-line"></i> {{goal.description}}</li>
-            {% endfor %}
-          </ul>
+         
           {% for moto in mot|slice:":1" %}
         <p class="font-italic text-justify">
           {{ moto.description|upper}}
