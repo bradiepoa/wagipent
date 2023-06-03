@@ -402,7 +402,7 @@ class CurrentAndPreviousEvents(models.Model):
     event_date   =  models.DateField(auto_now_add=False, auto_now=False)
 
     class Meta:
-        verbose_name_plural = '21. Current And Previous Events'
+        verbose_name_plural = '21. Events'
 
     def __str__(self):
         return self.name
@@ -415,3 +415,10 @@ class CurrentAndPreviousEvents(models.Model):
         except:
             url = ''
         return url
+    
+    def clean(self):
+        super().clean()
+        if self.image.width < 1920 or self.image.height < 1088:
+            raise ValidationError("Image minimum dimensions should be at least 1920x1088 pixels.")
+        elif self.image.width > 1920 or self.image.height > 1088:
+            raise ValidationError("Image  dimensions should be at most 1920x1088 pixels.")
