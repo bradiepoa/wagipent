@@ -265,7 +265,7 @@ class mainObjective(models.Model):
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
 
     class Meta:
-        verbose_name_plural = '09. main objectives'
+        verbose_name_plural = '09. Objectives'
 
     def __str__(self):
         return self.description

@@ -180,6 +180,7 @@ def Contacts_view(request):
 
 
 def eventView(request):
+	querry = CurrentAndPreviousEvents.objects.all()
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
 	locate = Location.objects.all().order_by('-date_created')
 	emailz = Email.objects.all().order_by('-date_created')
