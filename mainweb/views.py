@@ -39,6 +39,7 @@ def Home_view(request):
 
 
 def About_view(request):
+	banner = Banners.objects.filter(categories='about').order_by("date")
 	back = background.objects.order_by('-date_created').filter(is_published=True)
 	goals = goal.objects.order_by('-date_created').filter(is_published=True)
 	mot = motto.objects.order_by('-date_created').filter(is_published=True)
@@ -60,8 +61,8 @@ def About_view(request):
 	
 
 	context = {
-		'back':back, 'goals':goals,'mot':mot, 'capt':capt,'misso':misso
-		, 'visso':visso,'mbj':mbj,'capt':capt,'team':team,'patt':patt,'querryset':querryset,
+		'back':back, 'goals':goals,'mot':mot, 'capt':capt,'misso':misso,'banner':banner,
+		'visso':visso,'mbj':mbj,'capt':capt,'team':team,'patt':patt,'querryset':querryset,
 		'locate':locate,'emailz':emailz,'phones':phones,
 		}
 	return render(request, 'mainweb/about.html',context)

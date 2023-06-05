@@ -273,7 +273,7 @@ class mainObjective(models.Model):
 
 class StaffCaption(models.Model):
     description = RichTextField()
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -327,12 +327,12 @@ class Staff(models.Model):
 
 
 class Parttener(models.Model):
-    name = models.CharField(max_length=200,unique=True, blank=True, null=True)
-    email = models.EmailField(max_length=200, blank=True, null=True)
-    phone = models.CharField(max_length=200, blank=True, null=True)
+    name = models.CharField(max_length=200,unique=True)
+    email = models.EmailField(max_length=200)
+    phone = models.CharField(max_length=200)
     description = RichTextField()
     Date_joined = models.DateField(auto_now_add=False, auto_now=False)
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -346,7 +346,7 @@ class Parttener(models.Model):
 
 class contactDescription(models.Model):
     description = RichTextField()
-    created_by = models.CharField(max_length=200, blank=True, null=True)
+    created_by = models.CharField(max_length=200)
     is_published = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True, auto_now=False)
     laste_update = models.DateField(auto_now_add=False, auto_now=True)
@@ -359,8 +359,8 @@ class contactDescription(models.Model):
 
 
 class Companies(models.Model):
-    name  = models.CharField(max_length=200,unique=True, blank=True, null=True)
-    image = models.ImageField(upload_to ='company', blank=True,null=True)
+    name  = models.CharField(max_length=200,unique=True)
+    image = models.ImageField(upload_to ='company')
     our_link = models.URLField(max_length=200, blank=True,null=True)
     description  = RichTextField()
     is_published = models.BooleanField(default=True)

@@ -171,11 +171,11 @@ body {
 }
 
 a {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 a:hover {
-  color: #2ae149;
+  color: rgb(42, 85, 85);
   text-decoration: none;
 }
 
@@ -194,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   right: 15px;
   bottom: 15px;
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   color: #fff;
   transition: display 0.5s ease-in-out;
   z-index: 99999;
@@ -209,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .back-to-top:hover {
   color: #fff;
-  background: #2ae149;
+  background: rgb(42, 85, 85);
   transition: 0.3s ease-in-out;
 }
 
@@ -248,7 +248,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header .logo a span {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 #header .logo img {
@@ -287,7 +287,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .nav-menu .drop-down ul {
@@ -302,7 +302,7 @@ h1, h2, h3, h4, h5, h6 {
   background: #fff;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
-  border-top: 2px solid #1bbd36;
+  border-top: 2px solid rgb(42, 85, 85);
 }
 
 .nav-menu .drop-down:hover > ul {
@@ -325,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu .drop-down ul a:hover, .nav-menu .drop-down ul .active > a, .nav-menu .drop-down ul li:hover > a {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .nav-menu .drop-down > a:after {
@@ -385,7 +385,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-toggle i {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .mobile-nav {
@@ -420,7 +420,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav a:hover, .mobile-nav .active > a, .mobile-nav li:hover > a {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
   text-decoration: none;
 }
 
@@ -493,7 +493,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header-social-links a:hover {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 @media (max-width: 768px) {
@@ -542,7 +542,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   -webkit-animation-duration: .5s;
   animation-duration: .5s;
-  border-top: 5px solid #1bbd36;
+  border-top: 5px solid rgb(42, 85, 85);
 }
 
 #hero .carousel-content h2 {
@@ -566,11 +566,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
   -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
-  border: 2px solid #1bbd36;
+  border: 2px solid rgb(42, 85, 85);
 }
 
 #hero .btn-get-started:hover {
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   color: #fff;
   text-decoration: none;
 }
@@ -638,7 +638,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .carousel-indicators li.active {
   opacity: 1;
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
 }
 
 @media (min-width: 1024px) {
@@ -701,7 +701,7 @@ section {
   display: block;
   width: 50px;
   height: 3px;
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   bottom: 0;
   left: calc(50% - 25px);
 }
@@ -715,7 +715,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   min-height: 40px;
   margin-top: 72px;
 }
@@ -922,7 +922,7 @@ section {
 
 .portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
   color: #fff;
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -967,7 +967,7 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover, .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
@@ -993,7 +993,7 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-links a:hover {
-  color: #57e76f;
+  color: rgb(42, 85, 85);
 }
 
 .portfolio .portfolio-item:hover .portfolio-info {
@@ -1066,7 +1066,7 @@ section {
   top: 7px;
   position: absolute;
   font-size: 20px;
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .about-us .content p:last-child {
@@ -1186,118 +1186,13 @@ section {
 }
 
 .features .icon-box h3 a:hover {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 /*--------------------------------------------------------------
 # Pricing
 --------------------------------------------------------------*/
-.pricing .box {
-  padding: 20px;
-  background: #fff;
-  text-align: center;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
-  border-radius: 5px;
-  position: relative;
-  overflow: hidden;
-}
 
-.pricing h3 {
-  font-weight: 400;
-  margin: -20px -20px 20px -20px;
-  padding: 20px 15px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #847872;
-  background: #f8f8f8;
-}
-
-.pricing h4 {
-  font-size: 36px;
-  color: #1bbd36;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 20px;
-}
-
-.pricing h4 sup {
-  font-size: 20px;
-  top: -15px;
-  left: -3px;
-}
-
-.pricing h4 span {
-  color: #bababa;
-  font-size: 16px;
-  font-weight: 300;
-}
-
-.pricing ul {
-  padding: 0;
-  list-style: none;
-  color: #4d4643;
-  text-align: center;
-  line-height: 20px;
-  font-size: 14px;
-}
-
-.pricing ul li {
-  padding-bottom: 16px;
-}
-
-.pricing ul i {
-  color: #1bbd36;
-  font-size: 18px;
-  padding-right: 4px;
-}
-
-.pricing ul .na {
-  color: #ccc;
-  text-decoration: line-through;
-}
-
-.pricing .btn-wrap {
-  margin: 20px -20px -20px -20px;
-  padding: 20px 15px;
-  background: #f8f8f8;
-  text-align: center;
-}
-
-.pricing .btn-buy {
-  background: #1bbd36;
-  display: inline-block;
-  padding: 8px 35px 10px 35px;
-  border-radius: 4px;
-  color: #fff;
-  transition: none;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.pricing .btn-buy:hover {
-  background: #2ae149;
-}
-
-.pricing .featured h3 {
-  color: #fff;
-  background: #1bbd36;
-}
-
-.pricing .advanced {
-  width: 200px;
-  position: absolute;
-  top: 18px;
-  right: -68px;
-  transform: rotate(45deg);
-  z-index: 1;
-  font-size: 14px;
-  padding: 1px 0 3px 0;
-  background: #1bbd36;
-  color: #fff;
-}
 
 /*--------------------------------------------------------------
 # Frequently Asked Questions
@@ -1450,11 +1345,11 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
   float: left;
   width: 44px;
   height: 44px;
-  border: 1px solid #1bbd36;
+  border: 1px solid rgb(42, 85, 85);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1478,7 +1373,7 @@ section {
 }
 
 .contact .info:hover i {
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   color: #fff;
 }
 
@@ -1517,7 +1412,7 @@ section {
 .contact .send_us_message .sent-message {
   display: none;
   color: #fff;
-  background: #18d26e;
+  background: rgb(42, 85, 85);
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1537,7 +1432,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
+  border: 3px solid rgb(42, 85, 85);
   border-top-color: #eee;
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
@@ -1551,7 +1446,7 @@ section {
 }
 
 .contact .send_us_message input:focus, .contact .send_us_message textarea:focus {
-  border-color: #1bbd36;
+  border-color: rgb(42, 85, 85);
 }
 
 .contact .send_us_message input {
@@ -1563,7 +1458,7 @@ section {
 }
 
 .contact .send_us_message button[type="submit"] {
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1572,7 +1467,7 @@ section {
 }
 
 .contact .send_us_message button[type="submit"]:hover {
-  background: #2ae149;
+  background: rgb(42, 85, 85);
 }
 
 @-webkit-keyframes animate-loading {
@@ -1624,7 +1519,7 @@ section {
 }
 
 .portfolio-details .portfolio-details-carousel .owl-dot.active {
-  background-color: #1bbd36 !important;
+  background-color: rgb(42, 85, 85); !important;
 }
 
 .portfolio-details .portfolio-info {
@@ -1709,7 +1604,7 @@ section {
 }
 
 .blog .entry .entry-title a:hover {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .blog .entry .entry-meta {
@@ -1743,7 +1638,7 @@ section {
 }
 
 .blog .entry .entry-meta a:hover {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .blog .entry .entry-content p {
@@ -1757,7 +1652,7 @@ section {
 
 .blog .entry .entry-content .read-more a {
   display: inline-block;
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   color: #fff;
   padding: 7px 25px;
   transition: 0.3s;
@@ -1766,7 +1661,7 @@ section {
 }
 
 .blog .entry .entry-content .read-more a:hover {
-  background: #1ed33c;
+  background: rgb(42, 85, 85);
 }
 
 .blog .entry .entry-content h3 {
@@ -1837,7 +1732,7 @@ section {
 }
 
 .blog .entry .entry-footer a:hover {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .blog .entry .entry-footer .cats {
@@ -1941,23 +1836,6 @@ section {
   transition: 0.3s;
 }
 
-.blog .blog-comments .comment h5 a:hover {
-  color: #1bbd36;
-}
-
-.blog .blog-comments .comment h5 .reply {
-  padding-left: 10px;
-  color: #111;
-}
-
-.blog .blog-comments .comment time {
-  margin-left: 65px;
-  display: block;
-  font-size: 14px;
-  color: #777777;
-  margin-bottom: 5px;
-}
-
 .blog .blog-comments .comment p {
   margin-left: 65px;
 }
@@ -1990,7 +1868,7 @@ section {
 
 .blog .blog-comments .reply-form input:focus {
   box-shadow: none;
-  border-color: #57e76f;
+  border-color: rgb(42, 85, 85);
 }
 
 .blog .blog-comments .reply-form textarea {
@@ -2002,7 +1880,7 @@ section {
 
 .blog .blog-comments .reply-form textarea:focus {
   box-shadow: none;
-  border-color: #57e76f;
+  border-color: rgb(42, 85, 85);
 }
 
 .blog .blog-comments .reply-form .form-group {
@@ -2013,11 +1891,11 @@ section {
   padding: 8px 20px;
   border: 0;
   border-radius: 4px;
-  background-color: #1bbd36;
+  background-color: rgb(42, 85, 85);
 }
 
 .blog .blog-comments .reply-form .btn-primary:hover {
-  background-color: #1ed33c;
+  background-color: rgb(42, 85, 85);
 }
 
 .blog .blog-pagination {
@@ -2047,8 +1925,8 @@ section {
 }
 
 .blog .blog-pagination li.active, .blog .blog-pagination li:hover {
-  background: #1bbd36;
-  border: 1px solid #1bbd36;
+  background: rgb(42, 85, 85);
+  border: 1px solid rgb(42, 85, 85);
   border-radius: 4px;
 }
 
@@ -2110,14 +1988,14 @@ section {
   font-size: 16px;
   padding: 0 15px;
   margin: -1px;
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
 }
 
 .blog .sidebar .search-form form button:hover {
-  background: #1ed33c;
+  background: rgb(42, 85, 85);
 }
 
 .blog .sidebar .categories ul {
@@ -2135,7 +2013,7 @@ section {
 }
 
 .blog .sidebar .categories ul a:hover {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .blog .sidebar .categories ul a span {
@@ -2165,7 +2043,7 @@ section {
 }
 
 .blog .sidebar .recent-posts h4 a:hover {
-  color: #1bbd36;
+  color: rgb(42, 85, 85);
 }
 
 .blog .sidebar .recent-posts time {
@@ -2202,8 +2080,8 @@ section {
 
 .blog .sidebar .tags ul a:hover {
   color: #fff;
-  border: 1px solid #1bbd36;
-  background: #1bbd36;
+  border: 1px solid rgb(42, 85, 85);
+  background: rgb(42, 85, 85);
 }
 
 .blog .sidebar .tags ul a span {
@@ -2269,7 +2147,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #1ed33c;
+  color: rgb(42, 85, 85);
   font-size: 18px;
   line-height: 1;
 }
@@ -2333,7 +2211,7 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
@@ -2341,7 +2219,7 @@ section {
 }
 
 #footer .footer-newsletter form input[type="submit"]:hover {
-  background: #2ae149;
+  background: rgb(42, 85, 85);
 }
 
 #footer .credits {
@@ -2366,7 +2244,7 @@ section {
 }
 
 #footer .social-links a:hover {
-  background: #1bbd36;
+  background: rgb(42, 85, 85);
   color: #fff;
   text-decoration: none;
 }

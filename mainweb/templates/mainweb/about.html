@@ -15,130 +15,122 @@
 
  <!-- mission vision sbojects -->
 
- <div class="container-fluid" data-aos="fade-left">
-  <div class="row mx-1 mb-5">
-    <!--Grid column-->
-    <div class="col-md-12 mb-4">
-        <div class="card card-image" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/City/6-col/img%20(47).webp');">
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div class="card bg-secondary">
-
-                <div class="col-md-10 justify-content-center">
-                  <h3 class="card-title py-3 font-weight-bold"><strong>EMESCO DEVELOPMENT FOUNDATION</strong></h3>
-                  <h6 class="text purple-text section-title"><i class="fas fa-plane"></i><strong>Mission</strong></h6>
-                  {% for mission in misso|slice:":1" %}
-                  <p class="pb-3 m-5 justify-content-center">{{ mission.description }}</p>
-                  {% endfor %}
-              </div>
-
-              </div>
-            </div>
-        </div>
-    </div>
-    <!--Grid column-->
-  
-    <!--Grid column-->
+ <section class="mb-4" style="background-image: url({% static 'slider/images/bg_5.jpg' %});">
+  <div class="container" data-aos="fade-left">  
+    <h3 class="card-title text-center font-weight-bold"><strong>WAGIP TRADERS LIMITED</strong></h3>
     <div class="col-md-12 mb-4 mb-md-0">
-        <div class="card card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20%2873%29.webp);">
-            <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
-              <div class="col-md-6">
-                <div class="card bg-primary">
-                  <h3 class="card-title py-3 font-weight-bold"><strong>OUR VISSION</strong></h3>
-                  {% for vission in visso|slice:":1" %}
-                  <p class="pb-3">{{ vission.description }}</p>
-                  {% endfor %}
-               </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="card bg-primary">
-                  <h3 class="card-title py-3 font-weight-bold"><strong>OUR MAIN OBJECTIVE</strong></h3>
-                  {% for main in mbj|slice:":1" %}
-                  <p class="pb-3">{{ main.description }}</p>
-                  {% endfor %}
-                </div>
-              </div>
-            
-            </div>
-        </div>
+      <div class="col-md-12 mb-4">
+        <div class="card p-5" style="background-color: rgb(42, 85, 85);">
+          <h4 class="card-title font-weight-bold">OUR MISSION</h4>
+          {% for mission in misso|slice:":1" %}
+          <p class="pb-3">{{ mission.description|safe }}</p>
+          {% endfor %}
+        </div>                                
+      </div>
     </div>
-    <!--Grid column-->
   </div>
- </div>
+
+  <div class="container" data-aos="fade-up">  
+    <div class="col-md-12 mb-4 mb-md-0">
+      <div class="col-md-12 mb-4">
+        <div class="card p-5" style="background-color: rgb(42, 85, 85);">
+          <h4 class="card-title font-weight-bold">OUR VISSION</h4>
+          {% for vission in visso|slice:":1" %}
+          <p class="pb-3">{{ vission.description|safe }}</p>
+          {% endfor %}
+        </div>                                
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" data-aos="fade-left">  
+    <div class="col-md-12 mb-4 mb-md-0">
+      <div class="col-md-12 mb-4">
+        <div class="card p-5" style="background-color: rgb(42, 85, 85);">
+          <h4 class="card-title font-weight-bold">OUR MAIN OBJECTIVES</h4>
+          {% for main in mbj|slice:":1" %}
+          <div style="text-align:justify ;">
+            {{ main.description|safe }}
+          </div>
+          {% endfor %}                       
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</section>
  <!-- end of missin vission, objective -->
 
-    <!-- ======= Our Team Section ======= -->
-    <section id="team" class="team section-bg">
-      <div class="container">
+<!-- ======= Our Team Section ======= -->
+<section id="team" class="team section-bg">
+  <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
-          <h2>Our <strong>Team</strong></h2>
-          {% for caption in capt|slice:":1" %}
-            <p class="justify-content">{{caption.description|truncatewords:37}}</p>
-          {% endfor %}
-        </div>
+    <div class="section-title" data-aos="fade-up">
+      <h2>Our <strong>Team</strong></h2>
+      {% for caption in capt|slice:":1" %}
+        <p class="justify-content">{{caption.description|truncatewords:37}}</p>
+      {% endfor %}
+    </div>
 
-        <div class="row">
-          {% for stuff in team|slice:":4" %}
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img src="{{stuff.imageURL}}" class="img-fluid" alt="">
-                <div class="social">
-                  <a target="_blank" href="{{stuff.twitter}}"><i class="icofont-twitter"></i></a>
-                  <a target="_blank" href="{{stuff.faceBook}}"><i class="icofont-facebook"></i></a>
-                  <a target="_blank" href="{{stuff.instagram}}"><i class="icofont-instagram"></i></a>
-                  <a target="_blank" href="{{stuff.linkedin}}"><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4><a href="">{{stuff.Names}}</a></h4>
-                <span>{{stuff.tittle}}</span>
-              </div>
+    <div class="row">
+      {% for stuff in team|slice:":4" %}
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+        <div class="member" data-aos="fade-up">
+          <div class="member-img">
+            <img src="{{stuff.imageURL}}" class="img-fluid" alt="">
+            <div class="social">
+              <a target="_blank" href="{{stuff.twitter}}"><i class="icofont-twitter"></i></a>
+              <a target="_blank" href="{{stuff.faceBook}}"><i class="icofont-facebook"></i></a>
+              <a target="_blank" href="{{stuff.instagram}}"><i class="icofont-instagram"></i></a>
+              <a target="_blank" href="{{stuff.linkedin}}"><i class="icofont-linkedin"></i></a>
             </div>
-          </div> 
-          {% endfor %}   
-        </div>
-
-      </div>
-    </section><!-- End Our Team Section -->
-
-
-   <!-- sPatterner section -->
-    <section id="blog" class="blog">
-      <div class="container" data-aos="fade-up">
-        <h3>Our Patterners</h3>
-        <div class="row">
-          {% for patterns in patt|slice:":3" %}
-          <div class="col-lg-4 entries d-flex align-items-stretch"  data-aos-delay="100">
-            <article class="entry" data-aos="fade-up">
-              <h5>
-                <a class="pattern" href="">{{patterns.name}}</a>
-              </h5><br>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">{{ patterns.Date_joined }}</time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p class="text-justify">
-                  {{patterns.description}}
-                </p>
-              </div>
-            </article><!-- End blog entry -->
           </div>
-          {% endfor %}         
-
-         <!--  <a href="">More</a> -->
-
+          <div class="member-info">
+            <h4><a href="">{{stuff.Names}}</a></h4>
+            <span>{{stuff.tittle}}</span>
+          </div>
         </div>
+      </div> 
+      {% endfor %}   
+    </div>
+
+  </div>
+</section><!-- End Our Team Section -->
+
+
+<!-- sPatterner section -->
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
+    <h3>Our Patterners</h3>
+    <div class="row">
+      {% for patterns in patt|slice:":3" %}
+      <div class="col-lg-4 entries d-flex align-items-stretch"  data-aos-delay="100">
+        <article class="entry" data-aos="fade-up">
+          <h5>
+            <a class="pattern" href="">{{patterns.name}}</a>
+          </h5><br>
+
+          <div class="entry-meta">
+            <ul>
+              <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">{{ patterns.Date_joined }}</time></a></li>
+            </ul>
+          </div>
+
+          <div class="entry-content">
+            <p class="text-justify">
+              {{patterns.description}}
+            </p>
+          </div>
+        </article><!-- End blog entry -->
       </div>
-    </section><!-- End Patterner section -->
+      {% endfor %}         
 
-	
+      <!--  <a href="">More</a> -->
 
+    </div>
+  </div>
+</section><!-- End Patterner section -->
 </main>
 
 {% endblock content %}
