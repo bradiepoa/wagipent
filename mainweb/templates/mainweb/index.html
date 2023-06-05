@@ -70,7 +70,7 @@
   
     <section>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="jumbotron jumbotron-fluid bg-info">
+        <div class="jumbotron jumbotron-fluid" style="background-color: rgb(42, 85, 85);;">
           <div class="row">
             <div class="col-lg-8 m-5">
               {% for danation in dona|slice:":1" %}
@@ -94,7 +94,7 @@
 
             {% for event in events %}
             <div class="col-lg-4 entries">
-              <article class="entry bg-primary" data-aos="fade-up">
+              <article class="entry" data-aos="fade-up" style="background-color: rgb(42, 85, 85);;">
                 <h5>
                   <a class="pattern" href="">{{event.name}}</a>
                 </h5><br>
