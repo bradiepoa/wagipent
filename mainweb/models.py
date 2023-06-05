@@ -399,7 +399,7 @@ class CurrentAndPreviousEvents(models.Model):
     date        =  models.DateField(auto_now_add=True, auto_now=False)
     is_published = models.BooleanField(default=True)
     last_update  =  models.DateField(auto_now_add=False, auto_now=True)
-    event_date   =  models.DateField(auto_now_add=False, auto_now=False)
+    event_date   =  models.DateTimeField(auto_now_add=False, auto_now=False)
 
     class Meta:
         verbose_name_plural = '21. Events'

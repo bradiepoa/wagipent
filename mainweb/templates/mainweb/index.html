@@ -94,65 +94,33 @@
         <h3>Our events</h3>
         <div class="row">
 
-          <div class="col-lg-4 entries">
-            <article class="entry bg-primary" data-aos="fade-up">
-              <h5>
-                <a class="pattern" href="">Uganda Aids commission</a>
-              </h5><br>
+          {% if events %}
 
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">March 04 04</time></a></li>
-                </ul>
-              </div>
+            {% for event in events %}
+            <div class="col-lg-4 entries">
+              <article class="entry bg-primary" data-aos="fade-up">
+                <h5>
+                  <a class="pattern" href="">{{event.name}}</a>
+                </h5><br>
 
-              <div class="entry-content">
-                <p class="text-justify">
-                  Our simple goal? Do what it takes to accelerate brands on ecommerce. That drive to help our partners win informs
-                </p>
-              </div>
-            </article><!-- End blog entry -->
-          </div>
+                <div class="entry-meta">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">{{event.event_date}}</time></a></li>
+                  </ul>
+                </div>
+
+                <div class="entry-content">
+                  <p class="text-justify">
+                    {{event.description|truncatechars:150|safe}}
+                  </p>
+                </div>
+              </article><!-- End blog entry -->
+            </div>
+            {% endfor %}
+          {% else %}
+          <h2>Not Events posted so far</h2>
+          {% endif %}
          
-          <div class="col-lg-4 entries">
-            <article class="entry bg-primary" data-aos="fade-up">
-              <h5>
-                <a class="pattern" href="">Uganda Aids commission</a>
-              </h5><br>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">March 04 04</time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p class="text-justify">
-                  Our simple goal? Do what it takes to accelerate brands on ecommerce. That drive to help our partners win informs
-                </p>
-              </div>
-            </article><!-- End blog entry -->
-          </div>
-
-          <div class="col-lg-4 entries">
-            <article class="entry bg-primary" data-aos="fade-up">
-              <h5>
-                <a class="pattern" href="">Uganda Aids commission</a>
-              </h5><br>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">March 04 04</time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p class="text-justify">
-                  Our simple goal? Do what it takes to accelerate brands on ecommerce. That drive to help our partners win informs
-                </p>
-              </div>
-            </article><!-- End blog entry -->
-          </div>
         </div>
       </div>
     </section>

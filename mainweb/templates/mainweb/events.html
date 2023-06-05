@@ -8,8 +8,47 @@
 {% include 'mainweb/sliders.html ' %}
 
 <main id="main">
+  <!-- events -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+      <h3>Our  current & previous events based on date</h3>
+      <div class="row">
+        {% if events %}
+        {% for envents in events|slice:":3" %}
+        <div class="col-lg-12 entries">
+          <article class="entry" data-aos="fade-up">
+            <h5>
+              <a class="pattern stretched-link" href="{% url 'mainweb:event' envents.id %}">{{envents.name|title}}</a>
+            </h5><br>
 
-   <!-- events -->
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="">admin</a></li>
+                <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href=""><time datetime="2020-01-01">{{envents.event_date}}</time></a></li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+              <p class="text-justify">
+                {{ envents.description|truncatechars:350|safe }}
+              </p>
+            </div>
+          </article><!-- End blog entry -->
+        </div>
+        {% endfor %}
+        <div class="paginator">
+          <p class="paginator">{% include "mainweb/pagination.html" with page=querryset %}</p>
+        </div>
+        {% else %}
+
+          <p>No Information presented for both, previous and current events</p>
+
+        {% endif %}
+      </div>
+      
+    </div>
+  </section>
+  <!-- end of events -->
    
  
   <!-- end of events -->

@@ -10,7 +10,7 @@ from django.contrib import messages
 # Create your views here.
 
 def Home_view(request):
-
+	
 	banner = Banners.objects.filter(categories='home').order_by("date")
 	services = Companies.objects.order_by('-date_created').filter(is_published=True)
 	back = background.objects.order_by('-date_created').filter(is_published=True)
@@ -29,9 +29,10 @@ def Home_view(request):
 
 	patt = Parttener.objects.order_by('-date_created').filter(is_published=True)
 
-	context = {'services':services}
+	events = CurrentAndPreviousEvents.objects.filter(is_published=True).order_by('-date')
+
 	context = {
-		'back':back, 'goals':goals,'mot':mot, 'misso':misso,'locate':locate,'emailz':emailz,'phones':phones,
+		'back':back, 'goals':goals,'mot':mot, 'misso':misso,'locate':locate,'emailz':emailz,'phones':phones,'events':events,
 		'visso':visso,'mbj':mbj,'services':services,"dona":dona,"patt":patt,'querryset':querryset,'banner':banner
 		}
 	return render(request, 'mainweb/index.html',context)
@@ -179,15 +180,27 @@ def Contacts_view(request):
 	return render(request, 'mainweb/contacts.html', context)
 
 
+def Event(request, pk):
 
+	events = CurrentAndPreviousEvents.objects.get(id=pk)
+	locate = Location.objects.all().order_by('-date_created')
+	emailz = Email.objects.all().order_by('-date_created')
+	phones = OfficePhone.objects.all().order_by('-date_created')
+
+	querryset = Service.objects.order_by('-date').filter(is_published=True)
+	context = {'querryset':querryset,'locate':locate,'emailz':emailz,'phones':phones,'events':events}
+	return render(request, 'mainweb/event.html', context)
 
 def eventView(request):
 	banner = Banners.objects.filter(categories='events').order_by("date")
-	querry = CurrentAndPreviousEvents.objects.all()
+	events = CurrentAndPreviousEvents.objects.filter(is_published=True).order_by('event_date')
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
 	locate = Location.objects.all().order_by('-date_created')
 	emailz = Email.objects.all().order_by('-date_created')
 	phones = OfficePhone.objects.all().order_by('-date_created')
 	
-	context = {'locate':locate,'emailz':emailz,'phones':phones,'querryset':querryset,'banner':banner}
+	context = {
+		'locate':locate,'emailz':emailz,'phones':phones,'events':events,
+	'querryset':querryset,'banner':banner
+	}
 	return render(request, 'mainweb/events.html', context)
