@@ -139,6 +139,7 @@ def Projectview(request,pk):
 
 
 def Team_view(request):
+	banner = Banners.objects.filter(categories='team').order_by("date")
 	team = Staff.objects.order_by('-date_created').filter(is_published=True)
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
 
@@ -146,7 +147,8 @@ def Team_view(request):
 	emailz = Email.objects.all().order_by('-date_created')
 	phones = OfficePhone.objects.all().order_by('-date_created')
 
-	context = {'team':team,'querryset':querryset,'locate':locate,'emailz':emailz,'phones':phones}
+	context = {'team':team,'querryset':querryset,'locate':locate,
+	'emailz':emailz,'phones':phones, 'banner':banner}
 	return render(request, 'mainweb/team.html', context)
 
 def singleTeam(request, pk):	
