@@ -182,11 +182,12 @@ def Contacts_view(request):
 
 
 def eventView(request):
+	banner = Banners.objects.filter(categories='events').order_by("date")
 	querry = CurrentAndPreviousEvents.objects.all()
 	querryset = Service.objects.order_by('-date').filter(is_published=True)
 	locate = Location.objects.all().order_by('-date_created')
 	emailz = Email.objects.all().order_by('-date_created')
 	phones = OfficePhone.objects.all().order_by('-date_created')
 	
-	context = {'locate':locate,'emailz':emailz,'phones':phones,'querryset':querryset}
+	context = {'locate':locate,'emailz':emailz,'phones':phones,'querryset':querryset,'banner':banner}
 	return render(request, 'mainweb/events.html', context)
